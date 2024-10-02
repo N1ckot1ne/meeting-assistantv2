@@ -19,11 +19,7 @@ const MeetingMinutes = () => {
       "Prepare a draft of the project plan.",
       "Schedule the next team meeting."
     ],
-    agenda: "Discuss the new project proposal, review the client's feedback, and assign tasks to team members.",
-    additionalActionItems: [
-      "Send the meeting notes to all attendees.",
-      "Update the project documentation."
-    ]
+    agenda: "Discuss the new project proposal, review the client's feedback, and assign tasks to team members."
   };
 
   return (
@@ -48,24 +44,40 @@ const MeetingMinutes = () => {
 
         {/* Meeting Minutes Form */}
         <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', boxSizing: 'border-box' }}>
-          {/* Date/Time */}
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>DATE/TIME:</label>
-            <div style={{
-              backgroundColor: '#e0e0e0',
-              padding: '15px',
-              borderRadius: '5px',
-              width: '100%',
-              fontSize: '14px',
-              boxSizing: 'border-box'
-            }}>
-              {meetingData.dateTime}
+            {/* Date/Time Container */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+              {/* Left Date/Time */}
+              <div style={{ width: '45%' }}>
+                <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>CCS FACULTY MEETING:</label>
+                <div style={{
+                  backgroundColor: '#e0e0e0',
+                  padding: '15px',
+                  borderRadius: '5px',
+                  fontSize: '14px',
+                  boxSizing: 'border-box'
+                }}>
+                  {meetingData.ccsFacultyMeeting}
+                </div>
+              </div>
+
+              {/* Right Date/Time */}
+              <div style={{ width: '45%' }}>
+                <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>DATE/TIME:</label>
+                <div style={{
+                  backgroundColor: '#e0e0e0',
+                  padding: '15px',
+                  borderRadius: '5px',
+                  fontSize: '14px',
+                  boxSizing: 'border-box'
+                }}>
+                  {meetingData.rightDateTime}
+                </div>
+              </div>
             </div>
-          </div>
 
           {/* Attendees Section */}
           <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>ATTENDEES</label>
+            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>FACULTY AND STAFF PRESENT</label>
             <div style={{
               backgroundColor: '#e0e0e0',
               padding: '15px',
@@ -87,7 +99,7 @@ const MeetingMinutes = () => {
 
           {/* Action Items Section */}
           <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>ACTION ITEMS</label>
+            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>AGENDA</label>
             <div style={{
               backgroundColor: '#e0e0e0',
               padding: '15px',
@@ -109,7 +121,7 @@ const MeetingMinutes = () => {
 
           {/* Agenda Section */}
           <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>AGENDA</label>
+            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>MEETING NOTES</label>
             <div style={{
               backgroundColor: '#e0e0e0',
               padding: '15px',
@@ -119,28 +131,6 @@ const MeetingMinutes = () => {
               boxSizing: 'border-box'
             }}>
               {meetingData.agenda}
-            </div>
-          </div>
-
-          {/* Additional Action Items Section */}
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', fontSize: '14px' }}>ADDITIONAL ACTION ITEMS</label>
-            <div style={{
-              backgroundColor: '#e0e0e0',
-              padding: '15px',
-              borderRadius: '5px',
-              width: '100%',
-              overflowY: 'auto',
-              fontSize: '14px',
-              boxSizing: 'border-box'
-            }}>
-              <ul style={{ margin: 0, padding: 0, listStyleType: 'none' }}>
-                {meetingData.additionalActionItems.map((item, index) => (
-                  <li key={index} style={{ marginBottom: '5px' }}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
